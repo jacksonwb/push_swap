@@ -26,7 +26,7 @@ The list of allowed instructions is as follows:
 * rrr - rra and rrb at the same time
 
 ## Usage
-run `./push	[-v] [numbers to sort...]`
+run `./push_swap	[-v] [numbers to sort...]`
 
 There is also a simple script to generate random shuffled numbers to use as input:
 
