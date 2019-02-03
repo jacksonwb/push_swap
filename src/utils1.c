@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbeall <jbeall@student.42.us.org>          +#+  +:+       +#+        */
+/*   By: jackson <jbeall@student.42.us.org>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 21:28:31 by jbeall            #+#    #+#             */
-/*   Updated: 2019/02/01 15:53:08 by jbeall           ###   ########.fr       */
+/*   Updated: 2019/02/02 13:37:54 by jackson          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ int		convert_val(char *str)
 void	ps_init(int num_vals, char **argv, t_stack **stack_a, t_stack **stack_b)
 {
 	t_val	*temp;
-	int		i;
 
-	i = 0;
 	*stack_a = (t_stack*)ft_memalloc(sizeof(t_stack));
 	*stack_b = (t_stack*)ft_memalloc(sizeof(t_stack));
 	(*stack_a)->start = (t_val*)ft_memalloc(sizeof(t_val));

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ps_visual.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbeall <jbeall@student.42.us.org>          +#+  +:+       +#+        */
+/*   By: jall <jbeall@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/31 15:12:31 by jbeall            #+#    #+#             */
 /*   Updated: 2019/02/01 13:03:42 by jbeall           ###   ########.fr       */
@@ -70,7 +70,7 @@ void	ps_visualize(t_stack *a, t_stack *b, char *op)
 
 	y = 0;
 	val = a->start;
-	clear();
+	erase();
 	while (val)
 	{
 		put_line(0, y++, val->val, scale_val(val->val, a->max,
@@ -86,6 +86,6 @@ void	ps_visualize(t_stack *a, t_stack *b, char *op)
 			a->min, PS_MAX_LEN));
 		val = val->next;
 	}
-	refresh();
+	wrefresh(a->win);
 	system(SLEEP_TIME);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbeall <jbeall@student.42.us.org>          +#+  +:+       +#+         #
+#    By: jackson <jbeall@student.42.us.org>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/01 14:21:53 by jbeall            #+#    #+#              #
-#    Updated: 2019/02/01 16:24:12 by jbeall           ###   ########.fr        #
+#    Updated: 2019/02/02 14:38:05 by jackson          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,12 @@ LIB = ./libft/libft.a
 $(NAME):
 	@make -C ./libft --no-print-directory
 	@echo "Creating $(NAME) executable..."
-	@gcc -o $(NAME) $(FLAGS) $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(PS_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR) -O3
+	@clang -o $(NAME) $(FLAGS) $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(PS_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR) -O3
 	@echo "\033[92mdone!\033[0m"
 $(NAME2):
 	@make -C ./libft --no-print-directory
 	@echo "Creating $(NAME2) executable..."
-	@gcc -o $(NAME2) $(FLAGS) $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(CHECK_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR) -O3
+	@clang -o $(NAME2) $(FLAGS) $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(CHECK_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR) -O3
 	@echo "\033[92mdone!\033[0m"
 all: $(NAME) $(NAME2)
 dev:
@@ -39,8 +39,8 @@ dev:
 	@rm -f $(NAME2)
 	@make -C ./libft --no-print-directory
 	@echo "compiling dev build..."
-	@gcc -o $(NAME) $(FLAGS) -g $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(PS_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR)
-	@gcc -o $(NAME2) $(FLAGS) -g $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(CHECK_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR)
+	@clang -o $(NAME) $(FLAGS) -g $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(PS_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR)
+	@clang -o $(NAME2) $(FLAGS) -g $(addprefix $(SRC_DIR), $(SRC)) $(addprefix $(SRC_DIR), $(CHECK_SRC)) $(LIB) -I$(LIB_INC_DIR) -I$(INC_DIR)
 	@echo "\033[92mdone!\033[0m"
 clean:
 	@echo "cleaning..."
